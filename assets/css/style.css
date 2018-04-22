@@ -1,11 +1,66 @@
-.letter-space {
-  display: inline-block;
-  flex-grow: 1;
-  font-size: 5rem;
-  min-width: 90px;
-  margin: 10px;
+
+
+html,
+body {
+  background: url("../images/tardis-edited.png") #041d44;
+  background-position: top right;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
-.blank-space {
-    width: 90px;
+.heading {
+  position: relative;
+}
+
+/* .heading_title {
+  font-size: 8rem;
+  font-family: 'Alex Brush', cursive;
+  transform: translateY(50%);
+} */
+
+.main-content {
+  text-align: center;
+  min-height: 500px;
+}
+
+.game-box {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.letter-space {
+    display: inline-block;
+    flex-grow: 1;
+    font-size: 5rem;
+    min-width: 90px;
+    margin: 10px;
+  }
+  
+  .blank-space {
+      width: 90px;
+  }
+
+  
+.stats__value {
+  font-size: 3rem;
+}
+
+#prompt_to_start {
+  font-size: 3.3rem;
+}
+
+.alert-box {
+  display: none;
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 991px) {
+  .heading_title {
+    transform: none;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
 }

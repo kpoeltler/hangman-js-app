@@ -18,13 +18,18 @@
     </div>
     <div class="container main_content">
         <div class="row">
-            <h2 id="word-to-guess" class="col-xs-12 game-box"></h2>
+            <h2 class="col-xs-12 alert-box" id="incorrect_entry"></h2>
+            <h2 class="col-xs-12 alert-box" id="game_over"></h2>
+            <h4 class="col-xs-12" id="prompt_to_start">**Press any key to play**</h4>
+        </div>
+        <div class="row">
+            <h2 id="word_to_guess" class="col-xs-12 game_box"></h2>
         </div>
         <h3 class="stats_title">Remaining Guesses</h3>
         <p id="remaining_guesses" class="stats_value">10</p>
-        <h3 class="stats-title"> Letters Guessed</h3>
-        <p id="letters-guessed" class="stats_value"></p>
-        </div>
+        <h3 class="stats_title"> Letters Guessed</h3>
+        <p id="letters_guessed" class="stats_value"></p>
+    </div>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>

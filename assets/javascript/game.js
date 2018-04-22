@@ -32,3 +32,12 @@ let gameStats = {
         });
     }
 };
+
+let gameElements = {
+    word: document.querySelector("#word_to_guess"),
+    remainingGuesses:document.querySelector("#remaining_guesses"),
+    lettersGuessed:document.querySelector("#letters_guessed"),
+    gameOver:document.querySelector("#game_over"),
+    promptToStart:document.querySelector("#prompt_to_start"),
+    incorrectGuess:document.querySelector("#incorrect_guess"),
+}
