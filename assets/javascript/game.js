@@ -15,7 +15,7 @@ var gameStats = {
         var consoleArray = "";
         this.consoleArr.forEach(function(space){
             if (space ==="_") {
-                consoleArray += "<div class='letter_space'><img class='blank-letter' src='assets/images/telescope.jpg' alt='telescope' /></div>";
+                consoleArray += "<div class='letter_space'><img class='blank_space' src='assets/images/telescope.jpg' alt='telescope' height='62' width='62' /></div>";
             } else {
                 consoleArray += "<div class= 'letter_space correct-letter'>" + space.toUpperCase() + "</div>";
             }
@@ -76,7 +76,7 @@ displayAnswer: function() {
 }
 
 function gameSetUp() {
-    gameElements.prompStart.style.display = "none";
+    // gameElements.prompStart.style.display = "none";
     gameElements.gameOver.style.display = "none";
     gameStats.resetStats();
     gameElements.resetWord();
@@ -132,7 +132,6 @@ function processGuess(guess) {
              window.removeEventListener("keyup", playGame);
              startGame();
          } else if (gameStats.remainingGuesses === 0) {
-             gameStats.losses++;
              gameElements.gameOver.innerText = "You Lose!";
              gameElements.displayAlerts();
              gameElements.displayAnswer();
@@ -149,7 +148,7 @@ function processGuess(guess) {
   }
 
   function startGame() {
-    window.addEventListener("keyup", gameSetUp);
+    window.addEventListener("keydown", gameSetUp);
   }
 
   startGame();

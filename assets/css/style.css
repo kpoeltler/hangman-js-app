@@ -2,9 +2,9 @@
 
 html,
 body {
-  background: url("../images/tardis-edited.png") #041d44;
+  background: url("../images/galaxy.jpg") #041d44;
   background-position: top right;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   color: #fff;
 }
 
@@ -12,11 +12,11 @@ body {
   position: relative;
 }
 
-/* .heading_title {
+.heading_title {
   font-size: 8rem;
   font-family: 'Alex Brush', cursive;
   transform: translateY(50%);
-} */
+}
 
 .main_content {
   text-align: center;
@@ -34,11 +34,11 @@ body {
     display: inline-block;
     flex-grow: 1;
     font-size: 5rem;
-    min-width: 90px;
-    margin: 10px;
+    min-width: 10px;
+    margin: 5px;
   }
   
-  .blank_space {
+  .blank_letter {
       width: 90px;
   }
 
