@@ -11,10 +11,11 @@ html,
 body {
   
   background-size: 97%;
-  background-color: rgb(2, 0, 15);
+  background-color: rgb(1, 0, 5);
   color: rgb(236, 234, 234);
 }
 .jumbotron{
+  font-family: 'Unica One', cursive;
   margin-bottom: 0px;
   color: rgb(231, 229, 229);
   text-shadow: black 0.3em 0.3em 0.3em;
@@ -37,12 +38,13 @@ body {
 
 .heading_title {
   font-size: 8rem;
-  font-family: 'Alex Brush';
+  font-family: 'Unica One', cursive;
   transform: translateY(20%);
   transform: translateX(-200%);
 }
 
 .main_content {
+  font-family: 'Unica One';
   text-align: center;
   min-height: 500px;
 }
@@ -53,6 +55,7 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+
 
 .letter_space {
     display: inline-block;
