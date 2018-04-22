@@ -4,8 +4,8 @@ html,
 body {
   
   background-size: 97%;
-  background-color: black;
-  color: #fff;
+  background-color: rgb(2, 0, 15);
+  color: rgb(236, 234, 234);
 }
 .jumbotron {
   margin-bottom: 0px;
@@ -14,7 +14,7 @@ body {
   background-position: 0% 25%;
   
   background-repeat: no-repeat;
-  color: white;
+  color: rgb(231, 229, 229);
   text-shadow: black 0.3em 0.3em 0.3em;
 }
 
@@ -50,12 +50,32 @@ body {
     margin: 5px;
   }
   
+  .win_loss_box {
+    margin-bottom: 50px;
+  }
+
+.win_loss_title {
+  margin-bottom:0;
+  margin-top:0;
+  padding-bottom: 10px;
+}
+
+win_loss_title,
+win_loss_value {
+  background:white;
+  color: black;
+}
+
+win_loss_value {
+  font-size: 2rem;
+}
+
   .blank_space {
       width: 90px;
   }
 
 
-.stats__value {
+.stats_value {
   font-size: 3rem;
 }
 

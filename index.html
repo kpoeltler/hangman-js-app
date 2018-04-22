@@ -13,28 +13,30 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Cosmic Word Guessing Game</h1>
-          <p class="lead">Six tries to guess correctly. Press 'p' to play. </p>
+            <h1 class="display-4">Cosmic Word Guessing Game</h1>
+            <p class="lead" id="prompt_to_start">Six tries to guess correctly. Press 'p' to play. </p>
         </div>
-      </div>
-    <div class="container">
-        <div class="row heading">
-           
-        <h1 class="col-xs-12 col-md-4 col-md-offset-1 heading_title">Hangman Game</h1>
+    </div>
+
     </div>
     <div class="container main_content">
+        <div class="row win_loss_box">
+            <h3 class="col-xs-6 col-sm-4 col-sm-offset-2 win_loss_title">Wins</h3>
+            <h3 class="col-xs-6 col-sm-4 col-sm-offset-2 win_loss_title">Losses</h3>
+            <p id="wins" class="xol-xs-6 col-sm-4 win_loss_value">0</p>
+            <p id="losses" class="xol-xs-6 col-sm-4 win_loss_value">0</p>
+        </div>
         <div class="row">
             <h2 class="col-xs-12 alert-box" id="incorrect_guess"></h2>
             <h2 class="col-xs-12 alert-box" id="game_over"></h2>
-            <h4 class="col-xs-12" id="prompt_to_start">Press 'K' to play</h4>
         </div>
         <div class="row">
             <h2 id="word_to_guess" class="col-xs-12 game_space"></h2>
         </div>
         <h3 class="stats_title">Remaining Guesses</h3>
-        <p id="remaining_guesses" class="stats__value">10</p>
+        <p id="remaining_guesses" class="stats_value">6</p>
         <h3 class="stats_title"> Letters Guessed</h3>
-        <p id="letters_guessed" class="stats__value"></p>
+        <p id="letters_guessed" class="stats_value"></p>
     </div>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
