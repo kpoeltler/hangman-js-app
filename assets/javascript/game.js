@@ -105,9 +105,43 @@ processGuess=(guess)=>{
      compareLetter = event => {
          let alphaNumeric = /^[0-9a-zA-Z]+$/;
          let letterGuess = "";
+         if (event.key.match(alphaNumeric) && event.key.length === 1) {
+             letterGuess = event.key;
+         } else {
+             gameElements.incorrectEntry.innerText = event.key + " is not a valid entry";
+             gameElements.incorrectEntry.style.display = "block";
+             return;    
+         }
+         gameElements.incorrectEntry.style.display = "none";
          
+         processGuess(letterGuess);
+     }
+ 
+     checkProgress => {
+         if (gameStats.consoleArr.join("") === gameStats.chosenWord.join("")) {
+             gameElements.gameOver.innerText = "You Win!";
+             gameElements.displayAlerts();
+             gameElements.updateWinLoss();
+             window.removeEventListerner("keyup", playGame);
+             startGame();
+         } else if (gameStats.remainingGuesses === 0) {
+             gameStats.losses++;
+             gameElements.gameOver.innerText = "You Lose!";
+             gameElements.displayAlerts();
+             gameElements.displayAnswer();
+             gameElemetns.updateWinLoss();
+             window.removeEventListerner("keyup", playGame);
+             startGame();
+         } else {
+             return;
+         }
      }
 
+  playGame = event => {
+      compareLetter(event);
+      checkProgress();
+  }
 
+  startGame => window.addEventListener("keyup", gameSetUp);
 
-}
+  startGame();
