@@ -17,7 +17,7 @@ function generateWord() {
       var consoleGameArr = "";
       this.consoleArr.forEach(function(space) {
         if (space === "_") {
-          consoleGameArr += "<div class='letter_space'><img class='blank_space' src='assets/images/telescope.jpg' alt='telescope'height='62' width='62' /></div>";
+          consoleGameArr += "<div class='letter_space'><img class='blank_space' src='assets/images/eclipse.png' alt='telescope'height='82' width='52' /></div>";
         } else {
           consoleGameArr += "<div class='letter_space correct-letter'>" + space.toUpperCase() + "</div>";
         }
