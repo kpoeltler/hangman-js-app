@@ -24,6 +24,11 @@ let gameStats = {
     },
 
     resetStats: function() {
-        this.c
+        this.chosenWord = generateWord();
+        this.lettersGuessed = [];
+        this.remainingGuesses = 10;
+        this.consoleArr = this.chosenWord.map(function(letter){
+            return "_";
+        });
     }
-}
+};
