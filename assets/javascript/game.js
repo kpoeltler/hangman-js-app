@@ -1,6 +1,4 @@
 
-
-
 function generateWord() {
     var wordBank = ["blackhole", "quasars", "asteroid", "galaxy", "eclipse","comet"];
     var randomIndex = Math.floor(Math.random() * wordBank.length);
