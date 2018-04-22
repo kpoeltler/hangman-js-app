@@ -17,8 +17,13 @@ let gameStats = {
             if (space==="_") {
                 consoleArrHTML += "<div class='letter-space'><img class='blank-space' src='assets/images/telescope.jpg'/></div>";
             }else {
-                consoleArrHTML += "<div class= 'letter-space'>
+                consoleArrHTML += "<div class= 'letter-space'>" + space.toUpperCase() + "</div>";
             }
-        })
+        });
+        return consoleArrHTML;
+    },
+
+    resetStats: function() {
+        this.c
     }
 }
