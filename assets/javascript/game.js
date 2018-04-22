@@ -12,15 +12,15 @@ var gameStats = {
     consoleArr:[],
 
     createConsole: function() {
-        let consoleArr ="";
+        var consoleArray = "";
         this.consoleArr.forEach(function(space){
-            if (space==="_") {
-                consoleArr += "<div class='letter_space'><img class='blank_space' src='assets/images/telescope.jpg'/></div>";
-            }else {
-                consoleArr += "<div class= 'letter_space'>" + space.toUpperCase() + "</div>";
+            if (space ==="_") {
+                consoleArray += "<div class='letter_space'><img class='blank-letter' src='assets/images/telescope.jpg' alt='telescope' /></div>";
+            } else {
+                consoleArray += "<div class= 'letter_space correct-letter'>" + space.toUpperCase() + "</div>";
             }
         });
-        return consoleArr;
+        return consoleArray;
     },
 
     resetStats: function() {
@@ -85,15 +85,15 @@ function gameSetUp() {
 }
 
 function processGuess(guess) {
-    if (gameStats.chosenWord.includes(guess) && ! gameStats.lettersGuessed.includes (guess)) {
+    if (gameStats.chosenWord.includes(guess) && !gameStats.lettersGuessed.includes(guess)) {
         var arrOfIndex = [];
         gameStats.chosenWord.forEach(function(letter, index){
             if (letter === guess) {
          arrOfIndex.push(index);
             }
         });
-        arrOfIndex.forEach(function(i){
-            gameStats.display[i] = guess;
+        arrOfIndex.forEach(function(i) {
+            gameStats.consoleArr[i] = guess;
         });
         gameStats.lettersGuessed.push(guess);
         gameElements.updateLetterCorrect();
