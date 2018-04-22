@@ -1,0 +1,11 @@
+.letter-space {
+  display: inline-block;
+  flex-grow: 1;
+  font-size: 5rem;
+  min-width: 90px;
+  margin: 10px;
+}
+
+.blank-space {
+    width: 90px;
+}
