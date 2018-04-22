@@ -2,20 +2,32 @@
 
 html,
 body {
-  background: url("../images/galaxy.jpg") #041d44;
-  background-position: top right;
-  background-repeat: repeat;
+  
+  background-size: 97%;
+  background-color: black;
   color: #fff;
 }
+.jumbotron {
+  margin-bottom: 0px;
+  background-image: url("https://d2r55xnwy6nx47.cloudfront.net/uploads/2017/11/Vela_2880Lede-2880x1620.jpg") ;
+  background-size: 97% cover;
+  background-position: 0% 25%;
+  
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
+
 
 .heading {
-  position: relative;
+  position: center;
 }
 
 .heading_title {
   font-size: 8rem;
-  font-family: 'Alex Brush', cursive;
-  transform: translateY(50%);
+  font-family: 'Alex Brush';
+  transform: translateY(20%);
+  transform: translateX(-200%);
 }
 
 .main_content {
