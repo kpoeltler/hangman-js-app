@@ -1,26 +1,26 @@
 
-generateWord => {
+function generateWord() {
 let wordBank = ["Blackhole", "quasars", "asteroid", "galaxy", "eclipse"];
 let randomIndex = Math.floor(Math.random()* wordBank.length);
 return wordBank[randomIndex].toLowerCase().split("");
-};
+}
 
-let gameStats = {
+var gameStats = {
     chosenWord: [],
     lettersGuessed: [],
     remainingGuesses: 10,
     consoleArr:[],
 
-    createConsoleHTML: function() {
-        let consoleArrHTML ="";
+    createConsole: function() {
+        let consoleArr ="";
         this.consoleArr.forEach(function(space){
             if (space==="_") {
-                consoleArrHTML += "<div class='letter-space'><img class='blank-space' src='assets/images/telescope.jpg'/></div>";
+                consoleArr += "<div class='letter_space'><img class='blank_space' src='assets/images/telescope.jpg'/></div>";
             }else {
-                consoleArrHTML += "<div class= 'letter-space'>" + space.toUpperCase() + "</div>";
+                consoleArr += "<div class= 'letter_space'>" + space.toUpperCase() + "</div>";
             }
         });
-        return consoleArrHTML;
+        return consoleArr;
     },
 
     resetStats: function() {
@@ -33,24 +33,31 @@ let gameStats = {
     }
 };
 
-let gameElements = {
-    word: document.querySelector("#word_to_guess"),
+var gameElements = {
+    word:document.querySelector("#word_to_guess"),
     remainingGuesses:document.querySelector("#remaining_guesses"),
     lettersGuessed:document.querySelector("#letters_guessed"),
     gameOver:document.querySelector("#game_over"),
     promptToStart:document.querySelector("#prompt_to_start"),
     incorrectGuess:document.querySelector("#incorrect_guess"),
 
-resetWord: function(){
-    this.word.innerHTML = gameStats.createConsole ();
+resetWord: function() {
+    this.word.innerHTML = gameStats.createConsole();
     this.remainingGuesses.innerText = gameStats.remainingGuesses;
     this.lettersGuessed.innerText = gameStats.lettersGuessed;
 },
 
 updateLetterCorrect: function() {
-    this.word.innerHTML = gameStats.createConsole ();
+    this.word.innerHTML = gameStats.createConsole();
     this.lettersGuessed.innerText = gameStats.lettersGuessed.join(",").toUpperCase();
 },
+
+updateLetterIncorrect: function() {
+    this.remainingGuesses.innerText = gameStats.remainingGuesses;
+    this.lettersGuessed.innerText = gameStats.lettersGuessed.join(",").toUpperCase();
+},
+
+
 
 displayAlerts: function() {
     this.gameOver.style.display = "block";
@@ -68,7 +75,7 @@ displayAnswer: function() {
   }
 }
 
-gameSetUp => {
+function gameSetUp() {
     gameElements.prompStart.style.display = "none";
     gameElements.gameOver.style.display = "none";
     gameStats.resetStats();
@@ -77,9 +84,9 @@ gameSetUp => {
     window.addEventListener("keyup", playGame);
 }
 
-processGuess=(guess)=>{
+function processGuess(guess) {
     if (gameStats.chosenWord.includes(guess) && ! gameStats.lettersGuessed.includes (guess)) {
-        let arrOfIndex = [];
+        var arrOfIndex = [];
         gameStats.chosenWord.forEach(function(letter, index){
             if (letter === guess) {
          arrOfIndex.push(index);
@@ -90,58 +97,59 @@ processGuess=(guess)=>{
         });
         gameStats.lettersGuessed.push(guess);
         gameElements.updateLetterCorrect();
+        console.log("your progress:", gameStats.consoleArr.join(""));
     } else {
         if (!gameStats.lettersGuessed.includes(guess)) {
             gameStats.remainingGuesses--;
             gameStats.lettersGuessed.push(guess);
             gameElements.updateLetterIncorrect();
         } else {
-            gameElemetns.incorrectEntry.innerText = guess.toUpperCase() + " has been guessed";
-            gameElements.incorrectEntry.style.display = "block";
+            gameElements.incorrectGuess.innerText = guess.toUpperCase() + " has been guessed";
+            gameElements.incorrectGuess.style.display = "block";
         }
     }
 }
  
-     compareLetter = event => {
-         let alphaNumeric = /^[0-9a-zA-Z]+$/;
-         let letterGuess = "";
+     function compareLetter(event) {
+         var alphaNumeric = /^[0-9a-zA-Z]+$/;
+         var letterGuess = "";
          if (event.key.match(alphaNumeric) && event.key.length === 1) {
              letterGuess = event.key;
          } else {
-             gameElements.incorrectEntry.innerText = event.key + " is not a valid entry";
-             gameElements.incorrectEntry.style.display = "block";
+             gameElements.incorrectGuess.innerText = event.key + " is not a valid entry";
+             gameElements.incorrectGuess.style.display = "block";
              return;    
          }
-         gameElements.incorrectEntry.style.display = "none";
+         gameElements.incorrectGuess.style.display = "none";
          
          processGuess(letterGuess);
      }
  
-     checkProgress => {
+     function checkProgress() {
          if (gameStats.consoleArr.join("") === gameStats.chosenWord.join("")) {
              gameElements.gameOver.innerText = "You Win!";
              gameElements.displayAlerts();
-             gameElements.updateWinLoss();
-             window.removeEventListerner("keyup", playGame);
+             window.removeEventListener("keyup", playGame);
              startGame();
          } else if (gameStats.remainingGuesses === 0) {
              gameStats.losses++;
              gameElements.gameOver.innerText = "You Lose!";
              gameElements.displayAlerts();
              gameElements.displayAnswer();
-             gameElemetns.updateWinLoss();
-             window.removeEventListerner("keyup", playGame);
+             window.removeEventListener("keyup", playGame);
              startGame();
          } else {
              return;
          }
      }
 
-  playGame = event => {
+  function playGame(event) {
       compareLetter(event);
       checkProgress();
   }
 
-  startGame => window.addEventListener("keyup", gameSetUp);
+  function startGame() {
+    window.addEventListener("keyup", gameSetUp);
+  }
 
   startGame();

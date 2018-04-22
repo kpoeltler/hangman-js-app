@@ -18,19 +18,19 @@ body {
   transform: translateY(50%);
 } */
 
-.main-content {
+.main_content {
   text-align: center;
   min-height: 500px;
 }
 
-.game-box {
+.game_space {
   margin-bottom: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.letter-space {
+.letter_space {
     display: inline-block;
     flex-grow: 1;
     font-size: 5rem;
@@ -38,11 +38,11 @@ body {
     margin: 10px;
   }
   
-  .blank-space {
+  .blank_space {
       width: 90px;
   }
 
-  
+
 .stats__value {
   font-size: 3rem;
 }
