@@ -51,10 +51,10 @@ var focused = $('button').on('click', function () { // trigger touch on element 
     focused.trigger('touchstart'); // trigger touchstart
 });
 
-// $('button').on('touchstart', function () {
-//     $(this).focus();   // inside this function the focus works
-//     focused = $(this); // to point to currently focused
-// });
+$('button').on('touchstart', function () {
+    $(this).focus();   // inside this function the focus works
+    focused = $(this); // to point to currently focused
+});
 
 
 var gameElements = {
