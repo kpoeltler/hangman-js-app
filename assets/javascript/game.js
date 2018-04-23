@@ -53,10 +53,10 @@ $('button').on('click', function () { // trigger touch on element to set focus
     focused.next('input').trigger('touchstart'); // trigger touchstart
 });
 
-$('input').on('touchstart', function () {
-    $(this).focus();   // inside this function the focus works
-    focused = $(this); // to point to currently focused
-});
+// $('input').on('touchstart', function () {
+//     $(this).focus();   // inside this function the focus works
+//     focused = $(this); // to point to currently focused
+// });
 
 
 var gameElements = {
