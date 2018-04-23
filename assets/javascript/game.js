@@ -47,9 +47,7 @@ var gameStats = {
   }
 };
 
-function popKeyboard() {
-  document.getElementById("prompt_to_start").focus();
-}
+
 
 
 var gameElements = {
