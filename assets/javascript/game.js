@@ -47,14 +47,9 @@ var gameStats = {
   }
 };
 
-var focused = $('button').on('click', function () { // trigger touch on element to set focus
-    focused.trigger('touchstart'); // trigger touchstart
-});
-
-$('button').on('touchstart', function () {
-    $(this).focus();   // inside this function the focus works
-    focused = $(this); // to point to currently focused
-});
+function popKeyboard() {
+  document.getElementById("prompt_to_start").focus();
+}
 
 
 var gameElements = {
