@@ -46,7 +46,14 @@ var gameStats = {
     });
   }
 };
+$('input').bind('focus',function() {
+  $(window).scrollTop(10);
+  var keyboard_shown = $(window).scrollTop() > 0;
+  $(window).scrollTop(0);
 
+  $('#test').append(keyboard_shown?'keyboard ':'nokeyboard ');
+});
+});
 
 
 
