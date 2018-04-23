@@ -27,7 +27,7 @@ body {
   background-position: -40% 13%;
   animation: animatedBackground 60s linear infinite;
   animation-fill-mode: forwards;
-  
+  animation-fill-mode: forwards;
   background-repeat: no-repeat;
 }
 
@@ -61,7 +61,7 @@ body {
     display: inline-block;
     flex-grow: 1;
     font-size: 5rem;
-    min-width: 10px;
+    min-width: 12px;
     margin: 5px;
   }
   
@@ -86,7 +86,7 @@ win_loss_value {
 }
 
   .blank_space {
-      width: 90px;
+      width: 80px;
   }
 
 
