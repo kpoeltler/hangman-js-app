@@ -10,7 +10,7 @@
 html,
 body {
   
-  background-size: 90%;
+  background-size: 100%;
   background-color: #030d11;
   color: rgb(236, 234, 234);
 }
@@ -61,12 +61,12 @@ body {
     display: inline-block;
     flex-grow: 1;
     font-size: 5rem;
-    min-width: 12px;
+    min-width: 10px;
     margin: 5px;
   }
   
   .win_loss_box {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
   }
 
 .win_loss_title {
