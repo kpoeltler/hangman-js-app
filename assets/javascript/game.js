@@ -1,6 +1,6 @@
 
 function generateWord() {
-    var wordBank = ["blackhole", "quasars", "asteroid", "galaxy", "eclipse","comet"];
+    var wordBank = ["corona", "solar", "obscuration", "penumbra", "partial","totality", "umbra"];
     var randomIndex = Math.floor(Math.random() * wordBank.length);
     return wordBank[randomIndex].toLowerCase().split("");
   }
@@ -17,7 +17,7 @@ function generateWord() {
       var consoleGameArr = "";
       this.consoleArr.forEach(function(space) {
         if (space === "_") {
-          consoleGameArr += "<div class='letter_space'><img class='blank_space' src='assets/images/eclipse.png' alt='telescope'height='82' width='52' /></div>";
+          consoleGameArr += "<div class='letter_space'><img class='blank_space' src='assets/images/eclipse.png' alt='telescope'height='100' width='87' /></div>";
         } else {
           consoleGameArr += "<div class='letter_space correct-letter'>" + space.toUpperCase() + "</div>";
         }
