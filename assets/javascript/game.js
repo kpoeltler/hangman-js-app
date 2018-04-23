@@ -47,7 +47,7 @@ var gameStats = {
   }
 };
 
-var focused = $('input:first'); //this is just to have a starting point
+var focused = $('input'); //this is just to have a starting point
 
 $('button').on('click', function () { // trigger touch on element to set focus
     focused.next('input').trigger('touchstart'); // trigger touchstart
