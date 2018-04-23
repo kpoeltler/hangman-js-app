@@ -47,10 +47,8 @@ var gameStats = {
   }
 };
 
-var focused = $('input'); //this is just to have a starting point
-
-$('button').on('touchstart', function () { // trigger touch on element to set focus
-    focused.next('input').trigger('touchstart'); // trigger touchstart
+var focused = $('button').on('click', function () { // trigger touch on element to set focus
+    focused.trigger('touchstart'); // trigger touchstart
 });
 
 // $('button').on('touchstart', function () {
