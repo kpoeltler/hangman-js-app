@@ -14,34 +14,35 @@
     <div class="jumbotron jumbotron-fluid" id="animate-area">
         <div class="container">
             <h1 class="display-4">Eclipse Word Game</h1>
-            <p class="lead" >Six tries to guess correctly.</p>  
-            <input id ="prompt_to_start" "type="button" value="show keyboard" id="test" style="width:3px; height:6px; opacity:none;" />
+            <p class="lead">Six tries to guess correctly.</p>
+            <form id="prompt_to_start"> 
+                <input "type="radio" value="show keyboard"">
+            </form>
         </div>
     </div>
 
-    </div>
-    <div class="container main_content">
-        <div class="row win_loss_box">
-            <h3 class="col-xs-6 col-sm-4 col-sm-offset-1 win_loss_title">Wins</h3>
-            <h3 class="col-xs-6 col-sm-4 col-sm-offset-2 win_loss_title">Losses</h3>
-            <p id="wins" class="col-xs-6 col-sm-4 col-sm-offset-1 win_loss_value">0</p>
-            <p id="losses" class="col-xs-6 col-sm-4 col-sm-offset-2 win_loss_value">0</p>
+    <div class="container main_content ">
+        <div class="row win_loss_box ">
+            <h3 class="col-xs-6 col-sm-4 col-sm-offset-1 win_loss_title ">Wins</h3>
+            <h3 class="col-xs-6 col-sm-4 col-sm-offset-2 win_loss_title ">Losses</h3>
+            <p id="wins " class="col-xs-6 col-sm-4 col-sm-offset-1 win_loss_value ">0</p>
+            <p id="losses " class="col-xs-6 col-sm-4 col-sm-offset-2 win_loss_value ">0</p>
         </div>
-        <div class="row">
-            <h2 class="col-xs-12 alert-box" id="incorrect_guess"></h2>
-            <h2 class="col-xs-12 alert-box" id="game_over"></h2>
+        <div class="row ">
+            <h2 class="col-xs-12 alert-box " id="incorrect_guess "></h2>
+            <h2 class="col-xs-12 alert-box " id="game_over "></h2>
         </div>
-        <div class="row">
-            <h2 id="word_to_guess" class="col-xs-12 game_space"></h2>
+        <div class="row ">
+            <h2 id="word_to_guess " class="col-xs-12 game_space "></h2>
         </div>
-        <h3 class="stats_title">Remaining Turns</h3>
-        <p id="remaining_guesses" class="stats_value">6</p>
-        <h3 class="stats_title"> Letters Guessed</h3>
+        <h3 class="stats_title ">Remaining Turns</h3>
+        <p id="remaining_guesses " class="stats_value ">6</p>
+        <h3 class="stats_title "> Letters Guessed</h3>
        
-        <p id="letters_guessed" class="stats_value"></p>
+        <p id="letters_guessed " class="stats_value "></p>
     </div>
 
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script type="text/javascript " src="assets/javascript/game.js "></script>
 </body>
 
 </html>

@@ -168,6 +168,10 @@ function checkProgress() {
     gameElements.gameOver.innerText = "You Win!";
     gameElements.displayAlerts();
     gameElements.updateWinLoss();
+    // 
+    window.addEventListener('touchstart', function() {
+      // the user touched the screen!
+    })
     window.removeEventListener("keyup", playGame);
     startGame();
   } else if (gameStats.remainingGuesses === 0) {
