@@ -162,16 +162,17 @@ compareLetter = event => {
   processGuess(letterGuess);
 };
 
+
+window.addEventListener('touchstart', function onFirstTouch() {
+  // we could use a class
+  document.body.classList.add('user-is-touching');
+
 function checkProgress() {
   if (gameStats.consoleArr.join("") === gameStats.chosenWord.join("")) {
     gameStats.wins++;
     gameElements.gameOver.innerText = "You Win!";
     gameElements.displayAlerts();
     gameElements.updateWinLoss();
-    // 
-    window.addEventListener('touchstart', function() {
-      // the user touched the screen!
-    })
     window.removeEventListener("keyup", playGame);
     startGame();
   } else if (gameStats.remainingGuesses === 0) {
@@ -194,6 +195,10 @@ playGame = event => {
 
 function startGame() {
   window.addEventListener("keyup", gameSetUp);
+  window.addEventListener('touchstart', function onFirstTouch() {
+    // we could use a class
+    document.body.classList.add('user-is-touching');
+})
 }
 
 startGame();
