@@ -47,6 +47,16 @@ var gameStats = {
   }
 };
 
+var focused = $('input:first'); //this is just to have a starting point
+
+$('button').on('click', function () { // trigger touch on element to set focus
+    focused.next('input').trigger('touchstart'); // trigger touchstart
+});
+
+$('input').on('touchstart', function () {
+    $(this).focus();   // inside this function the focus works
+    focused = $(this); // to point to currently focused
+});
 
 
 var gameElements = {
@@ -188,18 +198,7 @@ playGame = event => {
   checkProgress();
 };
 
-// window.addEventListener('touchstart', function onFirstTouch() {
-//     // we could use a class
-//     document.body.classList.add('user-is-touching');
-// });
-
-function touchStart(event) {
-  event.preventDefault();
-  var allTouches = event.touches;
-  var targetTouches = event.targetTouches;
-  var changedTouches = event.changedTouches;
-}
-function startGame() { 
+function startGame() {
   window.addEventListener("keyup", gameSetUp);
 }
 
