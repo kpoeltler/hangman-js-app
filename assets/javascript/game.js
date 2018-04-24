@@ -187,11 +187,18 @@ playGame = event => {
   compareLetter(event);
   checkProgress();
 };
-window.addEventListener('touchstart', function onFirstTouch() {
-    // we could use a class
-    document.body.classList.add('user-is-touching');
-});
 
+// window.addEventListener('touchstart', function onFirstTouch() {
+//     // we could use a class
+//     document.body.classList.add('user-is-touching');
+// });
+
+function touchStart(event) {
+  event.preventDefault();
+  var allTouches = event.touches;
+  var targetTouches = event.targetTouches;
+  var changedTouches = event.changedTouches;
+}
 function startGame() { 
   window.addEventListener("keyup", gameSetUp);
 }
