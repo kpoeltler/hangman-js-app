@@ -1,4 +1,3 @@
-$(document).ready(function () {
 function generateWord() {
   var wordBank = [
     "corona",
@@ -46,18 +45,6 @@ var gameStats = {
     });
   }
 };
-
-var focused = $('input:first'); //this is just to have a starting point
-
-$('button').on('click', function () { // trigger touch on element to set focus
-    focused.next('input').trigger('touchstart'); // trigger touchstart
-});
-
-$('input').on('touchstart', function () {
-    $(this).focus();   // inside this function the focus works
-    focused = $(this); // to point to currently focused
-});
-
 
 var gameElements = {
   word: document.querySelector("#word_to_guess"),
@@ -158,66 +145,16 @@ function processGuess(guess) {
 
 // /** Takes one parameter and compares it  parameter   */
 compareLetter = event => {
-  var lbl, i;
-  var guessContainer = $('.guessingWordContainer');
-  
-  for (i = 0; i < word.length; i++) {
-      lbl = $('<label/>')
-              .text('_')
-              .show();
-      guessContainer.append(lbl);
+  var alphaNumeric = /^[0-9a-zA-Z]+$/;
+  var letterGuess = "";
+  if (event.key.match(alphaNumeric) && event.key.length === 1) {
+    letterGuess = event.key;
+  } else {
+    gameElements.incorrectGuess.innerText = event.key + " is not a valid entry";
+    gameElements.incorrectGuess.style.display = "block";
+    return;
   }
-
-  var abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var ul = $('<ul/>');
-  for (i = 0; c = abc[i], i < abc.length; i++) {
-      lbl = $('<li/>')
-              .text(c)
-              .addClass('not-tried')
-              .on('click', tryLetterClickHandler)
-              .show();
-      ul.append(lbl);
-  }
-  $('.tryLetters').append(ul);
-
-  $('#hangmanContainer').show();
-  playing = true;
-}
-
-function tryLetter(guessLetter) {
-  if (playing && triedLetters.indexOf(guessLetter) == -1) {
-      var lnkTryLetter = $('.tryLetters ul li:contains("' + guessLetter + '")');
-      lnkTryLetter.removeClass('not-tried');
-      
-      if (word.indexOf(guessLetter) != -1) {
-          uncoverLetter(guessLetter);
-          lnkTryLetter.addClass('ok');
-      } else {
-          health--;
-          refreshHang();
-          lnkTryLetter.addClass('notok');
-      }
-      lnkTryLetter.off('click');
-      if (score == word.length) {
-          gameWin();
-      } else if (health === 0) {
-          gameLost();
-      }
-
-      triedLetters.push(guessLetter);
-  }
-
-
-  // var alphaNumeric = /^[0-9a-zA-Z]+$/;
-  // var letterGuess = "";
-  // if (event.key.match(alphaNumeric) && event.key.length === 1) {
-  //   letterGuess = event.key;
-  // } else {
-  //   gameElements.incorrectGuess.innerText = event.key + " is not a valid entry";
-  //   gameElements.incorrectGuess.style.display = "block";
-  //   return;
-  // }
-  // gameElements.incorrectGuess.style.display = "none";
+  gameElements.incorrectGuess.style.display = "none";
 
   processGuess(letterGuess);
 };
@@ -253,4 +190,3 @@ function startGame() {
 }
 
 startGame();
-})

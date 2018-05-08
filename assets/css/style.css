@@ -7,7 +7,13 @@
     background-position: 100% 0;
   }
 }
-html,
+.wrapper {
+width: 1200px;
+margin: 0 auto;
+height: 900px;
+overflow: hidden;
+}
+
 body {
   
   background-size: 100%;

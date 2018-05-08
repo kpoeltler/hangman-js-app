@@ -11,16 +11,17 @@
 </head>
 
 <body>
-        <div class="jumbotron jumbotron-fluid" id="animate-area">
-            <div class="container">
+    <div class="wrapper">
+        <div class="jumbotron" id="animate-area">
+            
                 <h1 class="display-4">Eclipse Word Game</h1>
-                <p class="lead" >Six tries to guess correctly.</p> 
-                <input type="text"  name="contact_name" value=""id="prompt_to_start"/>
-                <button type="button">Start</button>
+                <p class="lead" id="prompt_to_start" >Six tries to guess correctly.</p> 
+                
+               
             </div>
-        </div>
+        
     
-        </div>
+        
         <div class="container main_content">
             <div class="row win_loss_box">
                 <h3 class="col-xs-6 col-sm-4 col-sm-offset-1 win_loss_title">Wins</h3>
@@ -41,9 +42,7 @@
                         <label>Tap a letter</label>
                         <div class="tryLetters"></div>
                     </div>
-
-
-                    
+     
             </div>
             <h3 class="stats_title">Remaining Turns</h3>
             <p id="remaining_guesses" class="stats_value">6</p>
@@ -51,6 +50,7 @@
            
             <p id="letters_guessed" class="stats_value"></p>
         </div>
+    </div>
     
 
     <script type="text/javascript " src="assets/javascript/game.js "></script>
