@@ -7,13 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kpoeltler/hangman-js-app.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kpoeltler/hangman-js-app/issues"
-  },
-  "homepage": "https://github.com/kpoeltler/hangman-js-app#readme"
+    "type": "git" 
+  }
 }
