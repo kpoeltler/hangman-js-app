@@ -1,5 +1,7 @@
 var canvas = document.getElementById("myCanvas");
 
+document.addEventListener("touchstart", touchHandler);
+
 function generateWord() {
   var wordBank = [
     "corona",
@@ -191,6 +193,7 @@ playGame = event => {
 };
 
 function startGame() {
+  document.addEventListener("touchstart", touchHandler);
   window.addEventListener("keyup", gameSetUp);
 }
 
