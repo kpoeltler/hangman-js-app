@@ -1,3 +1,5 @@
+var canvas = document.getElementById("myCanvas");
+
 function generateWord() {
   var wordBank = [
     "corona",
@@ -8,6 +10,7 @@ function generateWord() {
     "totality",
     "umbra"
   ];
+
   var randomIndex = Math.floor(Math.random() * wordBank.length);
   return wordBank[randomIndex].toLowerCase().split("");
 }
@@ -103,6 +106,8 @@ var gameElements = {
 
 /** Displays the initial and final setup for the game. */
 function gameSetUp() {
+  var el = document.getElementsByTagName("canvas")[0];
+el.addEventListener("touchstart", handleStart);
   gameElements.promptStart.style.display = "none";
   gameElements.gameOver.style.display = "none";
   gameStats.resetStats();
