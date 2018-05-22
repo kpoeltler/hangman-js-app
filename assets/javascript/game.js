@@ -1,6 +1,4 @@
-var canvas = document.getElementById("myCanvas");
 
-document.addEventListener("touchstart", touchHandler);
 
 function generateWord() {
   var wordBank = [
@@ -108,8 +106,7 @@ var gameElements = {
 
 /** Displays the initial and final setup for the game. */
 function gameSetUp() {
-  var el = document.getElementsByTagName("canvas")[0];
-el.addEventListener("touchstart", handleStart);
+  
   gameElements.promptStart.style.display = "none";
   gameElements.gameOver.style.display = "none";
   gameStats.resetStats();
@@ -193,7 +190,7 @@ playGame = event => {
 };
 
 function startGame() {
-  document.addEventListener("touchstart", touchHandler);
+
   window.addEventListener("keyup", gameSetUp);
 }
 
