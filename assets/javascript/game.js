@@ -19,7 +19,7 @@ var gameStats = {
   wins: 0,
   losses: 0,
   consoleArr: [],
-  createGameSpace: 
+  createGameSpace:
   function() {
     var consoleGameArr = "";
     this.consoleArr.forEach(function(space) {
@@ -35,7 +35,7 @@ var gameStats = {
     });
     return consoleGameArr;
   },
-  resetStats: 
+  resetStats:
   function() {
     this.chosenWord = generateWord();
     this.lettersGuessed = [];
@@ -55,37 +55,37 @@ var gameElements = {
   gameOver: document.querySelector("#game_over"),
   promptStart: document.querySelector("#prompt_to_start"),
   incorrectGuess: document.querySelector("#incorrect_guess"),
-  resetWordHTML: 
+  resetWordHTML:
   function() {
     this.word.innerHTML = gameStats.createGameSpace();
     this.remainingGuesses.innerText = gameStats.remainingGuesses;
     this.lettersGuessed.innerText = gameStats.lettersGuessed;
   },
-  updateHTMLCorrect: 
+  updateHTMLCorrect:
   function() {
     this.word.innerHTML = gameStats.createGameSpace();
     this.lettersGuessed.innerText = gameStats.lettersGuessed
       .join(", ")
       .toUpperCase();
   },
-  updateHTMLIncorrect: 
+  updateHTMLIncorrect:
   function() {
     this.remainingGuesses.innerText = gameStats.remainingGuesses;
     this.lettersGuessed.innerText = gameStats.lettersGuessed
       .join(", ")
       .toUpperCase();
   },
-  updateWinLoss: 
+  updateWinLoss:
   function() {
     this.wins.innerText = gameStats.wins;
     this.losses.innerText = gameStats.losses;
   },
-  displayAlerts: 
+  displayAlerts:
   function() {
     this.gameOver.style.display = "block";
     this.promptStart.style.display = "block";
   },
-  displayAnswer: 
+  displayAnswer:
   function() {
     function createAnswerHTML() {
       var answerHTML = "";
@@ -118,14 +118,14 @@ function processGuess(guess) {
     gameStats.chosenWord.includes(guess) &&
     !gameStats.lettersGuessed.includes(guess)
   ) {
-    var arrOfIndex = [];
+    var indexes = [];
     gameStats.chosenWord.forEach(function(letter, index) {
       if (letter === guess) {
-        arrOfIndex.push(index);
+        indexes.push(index);
       }
     });
 
-    arrOfIndex.forEach(function(i) {
+    indexes.forEach(function(i) {
       gameStats.consoleArr[i] = guess;
     });
     gameStats.lettersGuessed.push(guess);
