@@ -11,17 +11,17 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <canvas class="wrapper">
         <div class="jumbotron" id="animate-area">
-            
+
                 <h1 class="display-4">Eclipse Word Game</h1>
-                <p class="lead" id="prompt_to_start" >Six tries to guess correctly.</p> 
-                
-               
+                <p class="lead" id="prompt_to_start" >Six tries to guess correctly.</p>
+
+
             </div>
-        
-    
-        
+
+
+
         <div class="container main_content">
             <div class="row win_loss_box">
                 <h3 class="col-xs-6 col-sm-4 col-sm-offset-1 win_loss_title">Wins</h3>
@@ -35,23 +35,23 @@
             </div>
             <div class="row">
                 <h2 id="word_to_guess" class="col-xs-12 game_space"></h2>
-                
-                
+
+
                 <div id="guessContainer">
                         <div class="guessingWordContainer"></div>
                         <label>Tap a letter</label>
                         <div class="tryLetters"></div>
                     </div>
-     
+
             </div>
             <h3 class="stats_title">Remaining Turns</h3>
             <p id="remaining_guesses" class="stats_value">6</p>
             <h3 class="stats_title"> Letters Guessed</h3>
-           
+
             <p id="letters_guessed" class="stats_value"></p>
         </div>
-    </div>
-    
+    </canvas>
+
 
     <script type="text/javascript " src="assets/javascript/game.js "></script>
 </body>
