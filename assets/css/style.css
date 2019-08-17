@@ -15,7 +15,7 @@ overflow: hidden;
 }
 
 body {
-  
+
   background-size: 100%;
   background-color: #030d11;
   color: rgb(236, 234, 234);
@@ -25,6 +25,7 @@ body {
   margin-bottom: 0px;
   color: rgb(231, 229, 229);
   text-shadow: black 0.3em 0.3em 0.3em;
+  height: 36%;
 }
 #animate-area{
   background-color: transparent;
@@ -70,25 +71,28 @@ body {
     min-width: 10px;
     margin: 5px;
   }
-  
+
   .win_loss_box {
     margin-bottom: 55px;
   }
 
 .win_loss_title {
   margin-bottom:0;
-  margin-top:4;
+  margin-top:110px;
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 
-win_loss_title,
-win_loss_value {
+.win_loss_title,
+.win_loss_value {
   background:white;
   color: black;
 }
 
-win_loss_value {
-  font-size: 7rem;
+p h3, .win_loss_value {
+  padding-top: 5p;
+  font-size: 4em;
+  font-variant-numeric: normal;
 }
 
   .blank_space {

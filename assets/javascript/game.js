@@ -4,7 +4,7 @@ function generateWord() {
   var wordBank = [
     "corona",
     "solar",
-    "obscuration",
+    "lunar",
     "penumbra",
     "partial",
     "totality",
@@ -106,7 +106,7 @@ var gameElements = {
 
 /** Displays the initial and final setup for the game. */
 function gameSetUp() {
-  
+
   gameElements.promptStart.style.display = "none";
   gameElements.gameOver.style.display = "none";
   gameStats.resetStats();
